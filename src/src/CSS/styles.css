@@ -32,3 +32,14 @@ html {
     grid-gap: 20px;
     padding: 20px;
 }
+
+.operator {
+    color: black;
+    background-image: linear-gradient(to bottom, transparent, transparent 50%, rgba(0, 0, 0, .5));
+    background-color: lightgray;
+}
+
+.all-clear {
+    background-color: red;
+    border-color: darkslategray;
+    color: #fff;
