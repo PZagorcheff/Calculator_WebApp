@@ -43,3 +43,11 @@ html {
     background-color: red;
     border-color: darkslategray;
     color: #fff;
+}
+	
+.equal-sign {
+    background-color: blue;
+    border-color: darkslategray;
+    color: #fff;
+    height: 100%;
+    grid-area: 2 / 4 / 6 /5; 
