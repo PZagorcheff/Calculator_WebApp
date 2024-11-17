@@ -33,3 +33,9 @@ function Calculator_Reset() {
     Calculator.Wait_Second_Operand = false;
     Calculator.operator = null;
 }
+
+//This function updates the screen with the contents of Display_Value
+function Update_Display() {
+    const display = document.querySelector('.calculator-screen');
+    display.value = Calculator.Display_Value;
+}
