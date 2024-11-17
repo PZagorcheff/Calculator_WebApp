@@ -39,3 +39,14 @@ function Update_Display() {
     const display = document.querySelector('.calculator-screen');
     display.value = Calculator.Display_Value;
 }
+
+//This function handles operators
+function Handle_Operator(Next_Operator) {
+    const { First_Operand, Display_Value, operator } = Calculator
+    const Value_of_Input = parseFloat(Display_Value);
+    if (operator && Calculator.Wait_Second_Operand) {
+        Calculator.operator = Next_Operator;
+        return;
+    }
+	//TO-DO: Finish the function
+}
