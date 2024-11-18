@@ -48,5 +48,17 @@ function Handle_Operator(Next_Operator) {
         Calculator.operator = Next_Operator;
         return;
     }
-	//TO-DO: Finish the function
+	//TO-DO: Finish the function and apply Perform_Calculation
 }
+
+const Perform_Calculation = {
+    '/': (First_Operand, Second_Operand) => First_Operand / Second_Operand,
+
+    '*': (First_Operand, Second_Operand) => First_Operand * Second_Operand,
+    
+    '+': (First_Operand, Second_Operand) => First_Operand + Second_Operand,
+
+    '-': (First_Operand, Second_Operand) => First_Operand - Second_Operand,
+
+    '=': (First_Operand, Second_Operand) => Second_Operand
+};
