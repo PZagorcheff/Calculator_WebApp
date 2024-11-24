@@ -48,7 +48,18 @@ function Handle_Operator(Next_Operator) {
         Calculator.operator = Next_Operator;
         return;
     }
-	//TO-DO: Finish the function and apply Perform_Calculation
+	if (First_Operand == null) {
+        Calculator.First_Operand = Value_of_Input;
+    } else if (operator) {
+    const Value_Now = First_Operand || 0;
+    let result = Perform_Calculation[operator] (Value_Now, Value_of_Input);
+    result = Number(result).toFixed(9)
+    result = (result * 1).toString()
+    Calculator.Display_Value = parseFloat(result);
+    Calculator.First_Operand = parseFloat(result);
+    }
+    Calculator.Wait_Second_Operand = true;
+    Calculator.operator = Next_Operator;
 }
 
 const Perform_Calculation = {
