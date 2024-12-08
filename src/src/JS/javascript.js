@@ -26,20 +26,6 @@ function Input_Decimal(dot) {
     }
 }
 
-//This function reset to initiated state
-function Calculator_Reset() {
-    Calculator.Display_Value = '0';
-    Calculator.First_Operand = null;
-    Calculator.Wait_Second_Operand = false;
-    Calculator.operator = null;
-}
-
-//This function updates the screen with the contents of Display_Value
-function Update_Display() {
-    const display = document.querySelector('.calculator-screen');
-    display.value = Calculator.Display_Value;
-}
-
 //This function handles operators
 function Handle_Operator(Next_Operator) {
     const { First_Operand, Display_Value, operator } = Calculator
@@ -73,3 +59,32 @@ const Perform_Calculation = {
 
     '=': (First_Operand, Second_Operand) => Second_Operand
 };
+
+//This function reset to initiated state
+function Calculator_Reset() {
+    Calculator.Display_Value = '0';
+    Calculator.First_Operand = null;
+    Calculator.Wait_Second_Operand = false;
+    Calculator.operator = null;
+}
+
+//This function updates the screen with the contents of Display_Value
+function Update_Display() {
+    const display = document.querySelector('.calculator-screen');
+    display.value = Calculator.Display_Value;
+}
+
+//This section monitors button clicks
+const keys = document.querySelector('.calculator-keys');
+keys.addEventListener('click', (event) => {
+const { target } = event;
+if (!target.matches('button')) {
+    return;
+}
+
+if (target.classList.contains('operator')) {
+    Handle_Operator(target.value);
+    Update_Display();
+    return;
+}
+//TO-DO: Do if statements for decimal and all-clear
