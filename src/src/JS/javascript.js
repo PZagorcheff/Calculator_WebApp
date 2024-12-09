@@ -74,6 +74,7 @@ function Update_Display() {
     display.value = Calculator.Display_Value;
 }
 
+Update_Display();
 //This section monitors button clicks
 const keys = document.querySelector('.calculator-keys');
 keys.addEventListener('click', (event) => {
@@ -95,8 +96,13 @@ if (target.classList.contains('decimal')) {
     return;
 }
 
+// Ensures that AC clears the numbers from the Calculator
 if (target.classList.contains('all-clear')) {
     Calculator_Reset();
     Update_Display();
     return;
 }
+
+Input_Digit(target.value);
+Update_Display();
+})
