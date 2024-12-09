@@ -88,3 +88,15 @@ if (target.classList.contains('operator')) {
     return;
 }
 //TO-DO: Do if statements for decimal and all-clear
+
+if (target.classList.contains('decimal')) {
+    Input_Decimal(target.value);
+    Update_Display();
+    return;
+}
+
+if (target.classList.contains('all-clear')) {
+    Calculator_Reset();
+    Update_Display();
+    return;
+}
