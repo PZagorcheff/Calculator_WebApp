@@ -36,7 +36,7 @@ function Handle_Operator(Next_Operator) {
     }
 	if (First_Operand == null) {
         Calculator.First_Operand = Value_of_Input;
-    } else if (operator) {
+    } else if (operator) {								//Checks if an operator already exist
     const Value_Now = First_Operand || 0;
     let result = Perform_Calculation[operator] (Value_Now, Value_of_Input);
     result = Number(result).toFixed(9)
@@ -50,13 +50,9 @@ function Handle_Operator(Next_Operator) {
 
 const Perform_Calculation = {
     '/': (First_Operand, Second_Operand) => First_Operand / Second_Operand,
-
     '*': (First_Operand, Second_Operand) => First_Operand * Second_Operand,
-    
     '+': (First_Operand, Second_Operand) => First_Operand + Second_Operand,
-
     '-': (First_Operand, Second_Operand) => First_Operand - Second_Operand,
-
     '=': (First_Operand, Second_Operand) => Second_Operand
 };
 
@@ -75,10 +71,12 @@ function Update_Display() {
 }
 
 Update_Display();
+
 //This section monitors button clicks
 const keys = document.querySelector('.calculator-keys');
 keys.addEventListener('click', (event) => {
-const { target } = event;
+
+const { target } = event; 			//This target variable is an object that represents the element that was clicked
 if (!target.matches('button')) {
     return;
 }
@@ -88,7 +86,6 @@ if (target.classList.contains('operator')) {
     Update_Display();
     return;
 }
-//TO-DO: Do if statements for decimal and all-clear
 
 if (target.classList.contains('decimal')) {
     Input_Decimal(target.value);
